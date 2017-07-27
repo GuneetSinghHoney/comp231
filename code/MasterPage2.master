@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image:url('backorg.jpg')">
+
+    <form id="form1" runat="server">
+           <p align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="logout" runat="server" Text="Logout" BackColor="Blue" ForeColor="white" OnClick="logout_Click"/> </p>
+    
+    
+  <ul class="left" id="myleft" style="background-color:silver">
+      
+                    <br/><strong><a href="admin.aspx">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                    </strong>&nbsp;<strong><a href="student.aspx">View Students </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="emp.aspx">View Employees</a></strong>
+                    <strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="rooms.aspx">View Rooms</a></strong>
+               
+          </ul>  
+      
+              <div>
+                     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                
+        </asp:ContentPlaceHolder>
+    </div>
+        <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+           
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
