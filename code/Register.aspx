@@ -25,7 +25,7 @@
             ErrorMessage="Cannot be empty." 
             runat="server" /></strong></td></tr>
         
-        <tr><td><text style="color:red"><strong>*</strong></text> Username: </td><td><asp:TextBox ID="User" runat="server"></asp:TextBox></td><td>
+        <tr><td><div runat="server" id="u"><text style="color:red"><strong>*</strong></text>Username: </div> </td><td><asp:TextBox ID="User" runat="server"></asp:TextBox></td><td>
             <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
             ControlToValidate="User"
@@ -33,7 +33,7 @@
             runat="server" />
             </strong>
         </td></tr>
-        <tr><td><text style="color:red"><strong>*</strong></text> Password: </td><td><asp:TextBox ID="pass" TextMode="Password"  runat="server"></asp:TextBox></td><td><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+        <tr><td><div runat="server" id="p"><text style="color:red"><strong>*</strong></text>Password: </div> </td><td><asp:TextBox ID="pass" TextMode="Password"  runat="server"></asp:TextBox></td><td><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
             ControlToValidate="pass"
             ErrorMessage="Cannot be empty." 
             runat="server" /></strong></td></tr>
