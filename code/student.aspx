@@ -8,12 +8,9 @@
              <h3 align="left">List of Students:</h3>
     
              <h5 align="left"><a href="addstudent.aspx">##Add Student##</a></h5>
- </p>     
-         <asp:Repeater id="myrepeater" runat="server">
-            <ItemTemplate>
- 
-                <table border="1" style="background-color:white">
-               <tr>
+ </p>           <table border="1" style="background-color:white">
+          
+         <tr>
 
               
             <td><strong> Student Id</strong>
@@ -32,6 +29,10 @@
                                             <td></td>
                                             <td></td>
         </tr>
+          
+         <asp:Repeater id="myrepeater" runat="server">
+            <ItemTemplate>
+ 
                              <tr>
          <td><strong><%#Eval("Id")%></strong>
          </td><td><%#Eval("Username")%>
@@ -54,10 +55,11 @@
                                      <a href="modst.aspx?id=<%#Eval("Id") %>">Modify</a>
 
                                  </td>
-        </tr>                                    
-             </table>
+        </tr>        
               </ItemTemplate>
               </asp:Repeater></p>
+                                 
+             </table>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
 </asp:Content>

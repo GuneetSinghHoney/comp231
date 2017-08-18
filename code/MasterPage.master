@@ -9,15 +9,17 @@
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-image:url('dm.jpeg')">
+<body>
     <form id="form1" runat="server">
-        <ul class="top" id="mytop" style="background-image:url(bck.jpg)">
+        <ul class="top" id="mytop" style="background-color:grey; background-size: cover">
             
+             
             <li><strong><a href="first.aspx">Home</a></strong>
             &nbsp;</li>
             <li><a href="second.aspx">Booking </a>
             &nbsp;</li>
             <li><a href="det.aspx">View Details</a></li>
+            <li><a href="comp.aspx">Request/Complaints</a></li>
             <p align="right">&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button2" runat="server" Text="Logout" OnClick="Signout_Click" BackColor="Blue" ForeColor="black"/>
             </p>

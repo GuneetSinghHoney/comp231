@@ -17,6 +17,11 @@
             </ItemTemplate>
     
 </asp:Repeater> 
+
+          <asp:Label runat="server" Text="ROOM BOOKED:"></asp:Label>
+                 <asp:Label ID="bookedRoom" runat="server" Text="x         "></asp:Label>
+         </ br>
+         <asp:Button ID="Button1" runat="server" Text="Print Bill" OnClick="Button1_Click"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
 </asp:Content>

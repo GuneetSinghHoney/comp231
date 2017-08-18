@@ -15,17 +15,28 @@ public partial class Second : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            bool status = roomstatus(int.Parse(Session["userID"].ToString()));
+            bool status = false;
+
+            try
+            {
+                status = roomstatus(int.Parse(Session["userID"].ToString()));
+            }
+            catch (Exception ex)
+            {
+
+            }
             if (status == false)
             {
                 message.Text = "You are already Registered !";
                 mytable.Visible = false;
+                Button3.Visible = true;
             }
             else
             {
 
                 mytable.Visible = true;
                 bookingGui();
+                Button3.Visible = false;
             }
         }
 
@@ -141,9 +152,9 @@ public partial class Second : System.Web.UI.Page
             eight = int.Parse(rooom[8] + "" + rooom[9] + "");
 
         }
-        int roomt = RoomTypes.SelectedIndex + 1;
+         int roomt = RoomTypes.SelectedIndex+1;
 
-        string query1 = "insert into rooms values (" + id + "," + eight + "," + roomt + ")";
+        string query1 = "insert into rooms values (" + id + "," + eight + ",'" + roomt + "')";
 
 
         conn.Open();
@@ -153,5 +164,41 @@ public partial class Second : System.Web.UI.Page
         conn.Close();
 
         Response.Redirect("/first.aspx?id=" + id);
+    }
+
+    protected void cancel(object sender, EventArgs e)
+    {
+        int id = int.Parse(Session["userID"].ToString());
+        string date31strin = "08-18-2017 00:00:00";
+        DateTime dt2 = DateTime.ParseExact(date31strin,
+                        "MM-dd-yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+        int x = DateTime.Compare(new DateTime(), dt2);
+
+        if (x < 0)
+        {
+            cancelBooking(id);
+            Response.Redirect("/first.aspx?id=" + id);
+        }
+        else
+        {
+            message.Text = "Booking date has bee passed";
+        }
+
+    }
+
+    private void cancelBooking(int id)
+    {
+        SqlConnection conn;
+        SqlCommand comm;
+        string connectionString = ConfigurationManager.ConnectionStrings["Dorm"].ConnectionString;
+        conn = new SqlConnection(connectionString);
+
+        string query1 = "delete from rooms where id=" + id;
+
+        conn.Open();
+        comm = new SqlCommand(query1, conn);
+        comm.ExecuteNonQuery();
+        conn.Close();
+
     }
 }

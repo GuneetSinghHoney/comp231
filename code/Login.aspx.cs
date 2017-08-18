@@ -59,14 +59,43 @@ public partial class Login : System.Web.UI.Page
                 }
                 else if (r.Equals("Admin"))
                 {
+                    
                     Response.Redirect("admin.aspx");
+
+                }
+                else if (r.Equals("Frontdesk"))
+                {
+                    conn = new SqlConnection(connectionString);
+
+                    conn.Open();
+                    string query2 = "update SignUp set status='4' where Username='" + un + "'";
+                    comm = new SqlCommand(query2, conn);
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+
+
+                    Response.Redirect("employee.aspx");
+
+                }
+                else if (r.Equals("Supervisor"))
+                {
+                    conn = new SqlConnection(connectionString);
+
+                    conn.Open();
+                    string query2 = "update SignUp set status='3' where Username='" + un + "'";
+                    comm = new SqlCommand(query2, conn);
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+
+
+                    Response.Redirect("super.aspx");
 
                 }
 
             }
             else
             {
-                Msg.Text = "Invalid credentials. Please try again.";
+                Response.Write("<script>alert('Try Again!!!');</script>");
             }
         }
         conn.Close();
@@ -77,5 +106,10 @@ public partial class Login : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Redirect("Register.aspx");
+    }
+
+    protected void Team(object sender, EventArgs e)
+    {
+        Response.Redirect("/team.aspx");
     }
 }

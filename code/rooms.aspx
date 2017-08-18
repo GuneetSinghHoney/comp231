@@ -11,7 +11,7 @@
                <tr>
 
               
-            <td><strong>Id</strong>
+            <td><strong>Student-Id</strong>
          </td><td><strong>Room Number
          </td><td><strong>Room Type
 
@@ -20,6 +20,7 @@
          <td><strong><%#Eval("id")%></strong>
          </td><td><%#Eval("RoomNumber")%>
          </td><td> <%#Eval("RoomType")%>
+         <td><a href="delroom.aspx?id=<%#Eval("id")%>">Cancel</a>
            
         </tr>                                    
              </table>

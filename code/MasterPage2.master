@@ -22,7 +22,8 @@
                     &nbsp;&nbsp;&nbsp;&nbsp; <a href="emp.aspx">View Employees</a></strong>
                     <strong>
                     &nbsp;&nbsp;&nbsp;&nbsp; <a href="rooms.aspx">View Rooms</a></strong>
-               
+               <strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="view.aspx">Requests & Responses</a></strong>
           </ul>  
       
               <div>

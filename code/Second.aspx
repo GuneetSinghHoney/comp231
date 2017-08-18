@@ -24,10 +24,9 @@
             <asp:TableCell>
                 
     <asp:DropDownList ID="RoomTypes" runat="server" >
-             
-                <asp:ListItem Selected="true" Value="one"> 1BHK </asp:ListItem>
-                  <asp:ListItem Value="two"> 2BHK </asp:ListItem>
-                  <asp:ListItem Value="three"> 3BHK </asp:ListItem>
+                <asp:ListItem Selected="true" Value="one"> Single </asp:ListItem>
+                  <asp:ListItem Value="two"> Double </asp:ListItem>
+                  <asp:ListItem Value="three"> Triple </asp:ListItem>
         </asp:DropDownList>
             </asp:TableCell>
             <asp:TableCell>
@@ -37,6 +36,9 @@
     </asp:Table>
     
    <asp:Label id ="message" runat="server" Text=""></asp:Label>
+    
+   
+    <asp:Button ID="Button3" runat="server" OnClick="cancel" Text="Cancel Booking" />
     
    
 </asp:Content>
